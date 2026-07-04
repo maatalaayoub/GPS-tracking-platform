@@ -14,6 +14,13 @@
 
 import { execSync } from 'node:child_process';
 import { writeFileSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
+import { dirname, resolve } from 'node:path';
+
+// Always operate from the workspace root regardless of where Vercel calls
+// this script from (e.g. apps/dashboard when Root Directory is set there).
+const workspaceRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..');
+process.chdir(workspaceRoot);
 
 writeFileSync(
   'pnpm-workspace.yaml',
