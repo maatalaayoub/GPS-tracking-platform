@@ -1,0 +1,25 @@
+{
+  "name": "Algiers City Loop",
+  "description": "A loop through the main districts of Algiers city center. Start: Grande Poste → El Hamma → Hussein Dey → Kouba → Bir Mourad Raïs → Hydra → Ben Aknoun → Bouzareah → Bab El Oued → Centre → Grande Poste.",
+  "waypoints": [
+    {
+      "latitude": 36.7632,
+      "longitude": 3.0555,
+      "speed": 35,
+      "heading": 90,
+      "pauseMs": 2000
+    },
+    { "latitude": 36.764, "longitude": 3.072, "speed": 40, "heading": 70 },
+    { "latitude": 36.756, "longitude": 3.086, "speed": 45, "heading": 120 },
+    { "latitude": 36.743, "longitude": 3.0965, "speed": 50, "heading": 150 },
+    { "latitude": 36.7261, "longitude": 3.0996, "speed": 55, "heading": 180 },
+    { "latitude": 36.7148, "longitude": 3.0555, "speed": 60, "heading": 270 },
+    { "latitude": 36.7261, "longitude": 3.0222, "speed": 55, "heading": 330 },
+    { "latitude": 36.738, "longitude": 3.0111, "speed": 50, "heading": 350 },
+    { "latitude": 36.7605, "longitude": 3.0011, "speed": 45, "heading": 10 },
+    { "latitude": 36.793, "longitude": 3.0181, "speed": 40, "heading": 60 },
+    { "latitude": 36.7936, "longitude": 3.0563, "speed": 35, "heading": 90 },
+    { "latitude": 36.7751, "longitude": 3.0597, "speed": 30, "heading": 180 },
+    { "latitude": 36.7632, "longitude": 3.0555, "speed": 35, "heading": 180 }
+  ]
+}

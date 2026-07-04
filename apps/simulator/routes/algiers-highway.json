@@ -1,0 +1,21 @@
+{
+  "name": "Algiers–Blida Highway (A1)",
+  "description": "Southbound highway run from Algiers outskirts toward Blida. Simulates a vehicle cruising at 100–120 km/h on the A1 motorway.",
+  "waypoints": [
+    { "latitude": 36.72, "longitude": 3.07, "speed": 80, "heading": 190 },
+    { "latitude": 36.7, "longitude": 3.06, "speed": 100, "heading": 185 },
+    { "latitude": 36.68, "longitude": 3.054, "speed": 110, "heading": 183 },
+    { "latitude": 36.66, "longitude": 3.051, "speed": 115, "heading": 182 },
+    { "latitude": 36.64, "longitude": 3.049, "speed": 120, "heading": 181 },
+    { "latitude": 36.62, "longitude": 3.047, "speed": 115, "heading": 182 },
+    {
+      "latitude": 36.6,
+      "longitude": 3.02,
+      "speed": 110,
+      "heading": 200,
+      "pauseMs": 5000
+    },
+    { "latitude": 36.58, "longitude": 2.99, "speed": 100, "heading": 210 },
+    { "latitude": 36.56, "longitude": 2.97, "speed": 80, "heading": 215 }
+  ]
+}

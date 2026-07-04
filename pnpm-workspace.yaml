@@ -1,0 +1,17 @@
+packages:
+  - "apps/*"
+  - "packages/*"
+
+allowBuilds:
+  esbuild: true
+  sharp: true
+  unrs-resolver: true
+
+# Local tarball overrides for large binaries that fail to download
+# over the current network. Remove these once registry access is stable.
+overrides:
+  next: "file:./vendor/next.tgz"
+  "@next/swc-win32-x64-msvc": "file:./vendor/next-swc.tgz"
+  "@img/sharp-win32-x64": "file:./vendor/sharp.tgz"
+  "@esbuild/win32-x64@0.19.12": "file:./vendor/esbuild-0.19.12.tgz"
+  "@esbuild/win32-x64@0.28.1": "file:./vendor/esbuild-0.28.1.tgz"

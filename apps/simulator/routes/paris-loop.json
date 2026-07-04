@@ -1,0 +1,49 @@
+{
+  "name": "Paris Tourist Loop",
+  "description": "A slow city loop through central Paris landmarks: Eiffel Tower → Trocadéro → Arc de Triomphe → Champs-Élysées → Place de la Concorde → Louvre → Notre-Dame → back.",
+  "waypoints": [
+    {
+      "latitude": 48.8584,
+      "longitude": 2.2945,
+      "speed": 20,
+      "heading": 0,
+      "pauseMs": 3000
+    },
+    { "latitude": 48.8637, "longitude": 2.2886, "speed": 25, "heading": 350 },
+    {
+      "latitude": 48.8738,
+      "longitude": 2.295,
+      "speed": 30,
+      "heading": 15,
+      "pauseMs": 2000
+    },
+    { "latitude": 48.8697, "longitude": 2.3079, "speed": 25, "heading": 110 },
+    {
+      "latitude": 48.8654,
+      "longitude": 2.3212,
+      "speed": 20,
+      "heading": 120,
+      "pauseMs": 2000
+    },
+    { "latitude": 48.8634, "longitude": 2.3194, "speed": 15, "heading": 180 },
+    {
+      "latitude": 48.8606,
+      "longitude": 2.3376,
+      "speed": 20,
+      "heading": 110,
+      "pauseMs": 3000
+    },
+    { "latitude": 48.853, "longitude": 2.3499, "speed": 25, "heading": 150 },
+    { "latitude": 48.853, "longitude": 2.35, "speed": 20, "heading": 180 },
+    {
+      "latitude": 48.8504,
+      "longitude": 2.347,
+      "speed": 15,
+      "heading": 200,
+      "pauseMs": 3000
+    },
+    { "latitude": 48.855, "longitude": 2.335, "speed": 20, "heading": 280 },
+    { "latitude": 48.855, "longitude": 2.3, "speed": 25, "heading": 270 },
+    { "latitude": 48.8584, "longitude": 2.2945, "speed": 20, "heading": 230 }
+  ]
+}
