@@ -16,7 +16,7 @@ module.exports = {
     'prettier',
   ],
   rules: {
-    'no-fallthrough': ['error', { allowEmptyCases: true }],
+    'no-fallthrough': ['error', { allowEmptyCase: true }],
     'prettier/prettier': 'warn',
     '@typescript-eslint/no-unused-vars': [
       'warn',
