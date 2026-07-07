@@ -34,3 +34,39 @@ export interface TrackedDevice {
   position: LivePosition;
   updatedAt: Date;
 }
+
+/** A single historical position row from the database (snake_case). */
+export interface HistoryPosition {
+  id: number;
+  device_id: string;
+  latitude: number;
+  longitude: number;
+  altitude: number | null;
+  speed: number | null;
+  heading: number | null;
+  accuracy: number | null;
+  satellites: number | null;
+  valid: boolean;
+  protocol: string | null;
+  device_time: string | null;
+  server_time: string;
+}
+
+/** Filter state for the history page. */
+export interface HistoryFilters {
+  deviceId: string | null;
+  from: string | null;
+  to: string | null;
+  page: number;
+}
+
+/** Paginated result returned by the history query helper. */
+export interface HistoryResult {
+  positions: HistoryPosition[];
+  total: number;
+  page: number;
+  pageSize: number;
+  deviceId: string | null;
+  from: string | null;
+  to: string | null;
+}
