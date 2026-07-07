@@ -1,12 +1,12 @@
 import { PageHeader } from '@/components/shared/page-header';
 import { DevicesTable } from '@/components/devices/devices-table';
-import { createAdminClient } from '@/lib/supabase/server';
+import { createClient } from '@/lib/supabase/server';
 import type { Device } from '@/types/database';
 
 export const dynamic = 'force-dynamic';
 
 export default async function DevicesPage() {
-  const supabase = createAdminClient();
+  const supabase = await createClient();
 
   const { data, error } = await supabase
     .from('devices')

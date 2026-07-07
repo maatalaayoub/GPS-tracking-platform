@@ -1,4 +1,4 @@
-import { createAdminClient } from '@/lib/supabase/server';
+import { createClient } from '@/lib/supabase/server';
 import type { Device, Position } from '@/types/database';
 import type { HistoryFilters, HistoryResult } from '@/types/tracking';
 
@@ -6,9 +6,10 @@ export const HISTORY_PAGE_SIZE = 50;
 
 /**
  * Fetch the list of devices for the history filter dropdown.
+ * Uses the authenticated client so RLS filters by owner_id.
  */
 export async function fetchHistoryDevices(): Promise<Device[]> {
-  const supabase = createAdminClient();
+  const supabase = await createClient();
 
   const { data, error } = await supabase
     .from('devices')
@@ -25,14 +26,12 @@ export async function fetchHistoryDevices(): Promise<Device[]> {
 
 /**
  * Fetch paginated positions for the history page.
- *
- * Defaults to the last 24 hours if no date range is provided and a device
- * is selected.
+ * Uses the authenticated client so RLS filters by owner_id.
  */
 export async function fetchHistoryPositions(
   filters: HistoryFilters,
 ): Promise<HistoryResult> {
-  const supabase = createAdminClient();
+  const supabase = await createClient();
 
   const page = Math.max(1, filters.page);
   const from = filters.from;

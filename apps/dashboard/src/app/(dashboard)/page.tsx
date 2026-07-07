@@ -4,11 +4,11 @@ export const dynamic = 'force-dynamic';
 import { PageHeader } from '@/components/shared/page-header';
 import { StatsCard } from '@/components/shared/stats-card';
 import { DevicesTable } from '@/components/devices/devices-table';
-import { createAdminClient } from '@/lib/supabase/server';
+import { createClient } from '@/lib/supabase/server';
 import type { Device } from '@/types/database';
 
 async function getDashboardStats() {
-  const supabase = createAdminClient();
+  const supabase = await createClient();
 
   const [
     { count: totalDevices },

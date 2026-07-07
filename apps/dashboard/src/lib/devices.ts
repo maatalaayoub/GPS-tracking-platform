@@ -3,7 +3,7 @@
 import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
 
-import { createAdminClient } from '@/lib/supabase/server';
+import { createClient } from '@/lib/supabase/server';
 import type { Device } from '@/types/database';
 
 export type DeviceFormData = {
@@ -13,9 +13,10 @@ export type DeviceFormData = {
 
 /**
  * Fetch a single device by its internal UUID.
+ * Uses the authenticated client so RLS filters by owner_id.
  */
 export async function fetchDevice(id: string): Promise<Device | null> {
-  const supabase = createAdminClient();
+  const supabase = await createClient();
 
   const { data, error } = await supabase
     .from('devices')
@@ -33,12 +34,13 @@ export async function fetchDevice(id: string): Promise<Device | null> {
 
 /**
  * Update a device's editable fields.
+ * Uses the authenticated client so RLS allows only owners/admins.
  */
 export async function updateDevice(
   id: string,
   formData: DeviceFormData,
 ): Promise<{ success: boolean; error?: string }> {
-  const supabase = createAdminClient();
+  const supabase = await createClient();
 
   const { error } = await supabase
     .from('devices')
@@ -61,11 +63,12 @@ export async function updateDevice(
 
 /**
  * Delete a device and all its positions (cascade).
+ * Uses the authenticated client so RLS allows only owners/admins.
  */
 export async function deleteDevice(
   id: string,
 ): Promise<{ success: boolean; error?: string }> {
-  const supabase = createAdminClient();
+  const supabase = await createClient();
 
   const { error } = await supabase.from('devices').delete().eq('id', id);
 
