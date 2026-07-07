@@ -2,8 +2,8 @@
 
 export const dynamic = 'force-dynamic';
 
-import { useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { Suspense, useState, useEffect } from 'react';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { Satellite, Eye, EyeOff, Loader2 } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
@@ -20,11 +20,19 @@ import { createClient } from '@/lib/supabase/client';
 
 type Mode = 'signin' | 'signup';
 
-export default function LoginPage() {
+function LoginForm() {
   const router = useRouter();
+  const searchParams = useSearchParams();
   const supabase = createClient();
 
   const [mode, setMode] = useState<Mode>('signin');
+
+  useEffect(() => {
+    const urlMode = searchParams.get('mode');
+    if (urlMode === 'signup') {
+      setMode('signup');
+    }
+  }, [searchParams]);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
@@ -186,5 +194,19 @@ export default function LoginPage() {
         </form>
       </CardContent>
     </Card>
+  );
+}
+
+export default function LoginPage() {
+  return (
+    <Suspense
+      fallback={
+        <div className="flex h-screen items-center justify-center">
+          <div className="bg-muted h-12 w-12 animate-spin rounded-full" />
+        </div>
+      }
+    >
+      <LoginForm />
+    </Suspense>
   );
 }
