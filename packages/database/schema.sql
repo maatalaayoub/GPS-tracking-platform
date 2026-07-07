@@ -197,3 +197,5 @@ CREATE TRIGGER set_devices_updated_at
   BEFORE UPDATE ON "devices"
   FOR EACH ROW
   EXECUTE FUNCTION public.set_updated_at();
+
+
