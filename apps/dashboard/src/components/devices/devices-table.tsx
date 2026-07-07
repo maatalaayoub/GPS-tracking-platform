@@ -9,6 +9,7 @@ import {
   TableRow,
 } from '@/components/ui/table';
 import { StatusBadge } from './status-badge';
+import { DeviceActions } from './device-actions';
 import { EmptyState } from '@/components/shared/empty-state';
 import type { Device } from '@/types/database';
 
@@ -57,6 +58,7 @@ export function DevicesTable({ devices }: DevicesTableProps) {
             <TableHead>Status</TableHead>
             <TableHead>Last Seen</TableHead>
             <TableHead>Registered</TableHead>
+            <TableHead className="w-16">Actions</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
@@ -81,6 +83,9 @@ export function DevicesTable({ devices }: DevicesTableProps) {
               </TableCell>
               <TableCell className="text-muted-foreground">
                 {formatDate(device.created_at)}
+              </TableCell>
+              <TableCell>
+                <DeviceActions device={device} />
               </TableCell>
             </TableRow>
           ))}
